@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=ULOBD2 diagnostic data viewer and logger
+Comment=OBD2 diagnostic data viewer and logger
+Exec=obd2-viewer
+Icon=se.danielnylander.obd2-viewer
+Categories=Utility;

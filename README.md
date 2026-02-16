@@ -1,0 +1,54 @@
+# ULOBD2 diagnostic data viewer and logger
+
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Transifex](https://img.shields.io/badge/Transifex-translate-green.svg)](https://www.transifex.com/danielnylander/obd2-viewer/)
+
+OBD2 diagnostic data viewer and logger - a modern GTK4/Libadwaita application.
+
+## Features
+
+- Modern GTK4/Libadwaita interface
+- Multi-language support via Transifex
+- Keyboard shortcuts support
+- Cross-platform compatibility
+
+## Installation
+
+### From Source
+```bash
+git clone https://github.com/yeager/obd2-viewer.git
+cd obd2-viewer
+pip install -e .
+```
+
+### Debian/Ubuntu
+Download the latest `.deb` package from the [releases page](https://github.com/yeager/obd2-viewer/releases).
+
+### Fedora/RHEL
+Download the latest `.rpm` package from the [releases page](https://github.com/yeager/obd2-viewer/releases).
+
+## Usage
+
+Launch the application:
+```bash
+obd2-viewer
+```
+
+### Keyboard Shortcuts
+- `Ctrl+Q` - Quit application
+- `F5` - Refresh data
+- `Ctrl+?` - Show keyboard shortcuts
+
+## Translation
+
+Help translate this application on [Transifex](https://www.transifex.com/danielnylander/obd2-viewer/).
+
+## Author
+
+**Daniel Nylander**
+- Email: daniel@danielnylander.se
+- GitHub: [@yeager](https://github.com/yeager)
+
+## License
+
+This project is licensed under the GPL-3.0-or-later License - see the [LICENSE](LICENSE) file for details.
