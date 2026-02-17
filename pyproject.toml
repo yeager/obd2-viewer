@@ -1,10 +1,14 @@
 [project]
 name = "obd2-viewer"
-version = "0.1.0"
+version = "0.2.0"
 description = "OBD2 diagnostic data viewer and logger"
 authors = [{name = "Daniel Nylander", email = "daniel@danielnylander.se"}]
 license = {text = "GPL-3.0-or-later"}
 requires-python = ">=3.10"
+dependencies = [
+    "obd",
+    "PyGObject",
+]
 
 [project.gui-scripts]
 obd2-viewer = "obd2_viewer.main:main"
