@@ -1,5 +1,7 @@
 # ULOBD2 diagnostic data viewer and logger
 
+[![Version](https://img.shields.io/badge/version-0.2.0-blue)](https://github.com/yeager/obd2-viewer/releases)
+
 ## Screenshot
 
 ![OBD2 Viewer](screenshots/main.png)
