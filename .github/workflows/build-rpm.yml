@@ -37,7 +37,7 @@ jobs:
           Name:           obd2-viewer
           Version:        VERSION_PLACEHOLDER
           Release:        1
-          Summary:        
+          Summary:        OBD2 diagnostic data viewer and logger
           License:        GPL-3.0-or-later
           URL:            https://github.com/yeager/obd2-viewer
           Source0:        %{name}-%{version}.tar.gz
