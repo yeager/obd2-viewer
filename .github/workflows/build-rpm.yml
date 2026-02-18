@@ -11,92 +11,83 @@ permissions:
 jobs:
   build-rpm:
     runs-on: ubuntu-latest
-    container:
-      image: fedora:latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Install build dependencies
+
+      - name: Install RPM tools
+        run: sudo apt-get update && sudo apt-get install -y rpm
+
+      - name: Get version
+        id: version
+        run: echo "version=$(grep -oP '__version__ = \"\K[^\"]+' src/obd2_viewer/__init__.py)" >> $GITHUB_OUTPUT
+
+      - name: Setup RPM build
         run: |
-          dnf update -y
-          dnf install -y \
-            rpm-build rpmdevtools \
-            python3-devel python3-setuptools \
-            desktop-file-utils gettext
-      
-      - name: Set up RPM build environment
+          mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+          VERSION=${{ steps.version.outputs.version }}
+          DIR=obd2-viewer-$VERSION
+          mkdir -p $DIR
+          cp -r src/ data/ LICENSE README.md pyproject.toml $DIR/ 2>/dev/null || true
+          tar czf ~/rpmbuild/SOURCES/$DIR.tar.gz $DIR
+
+      - name: Create spec and build
         run: |
-          rpmdev-setuptree
-          
-          if [[ "${GITHUB_REF}" == refs/tags/v* ]]; then
-            VERSION=${GITHUB_REF#refs/tags/v}
-          else
-            VERSION="0.1.0"
-          fi
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-      
-      - name: Create RPM spec and build
-        run: |
+          VERSION=${{ steps.version.outputs.version }}
           cat > ~/rpmbuild/SPECS/obd2-viewer.spec << 'SPEC'
           Name:           obd2-viewer
           Version:        VERSION_PLACEHOLDER
           Release:        1
-          Summary:        OBD2 diagnostic data viewer and logger
-          
+          Summary:        
           License:        GPL-3.0-or-later
           URL:            https://github.com/yeager/obd2-viewer
           Source0:        %{name}-%{version}.tar.gz
-          
           BuildArch:      noarch
-          BuildRequires:  python3-devel python3-setuptools desktop-file-utils gettext
           Requires:       python3-gobject gtk4 libadwaita
-          
+
           %description
-          OBD2 Viewer is a GTK4/Libadwaita application for OBD2 diagnostic data.
-          
+          GTK4/Libadwaita application.
+
           %prep
           %setup -q
-          
-          %build
-          %py3_build
-          
+
           %install
-          %py3_install
-          
-          mkdir -p %{buildroot}%{_datadir}/applications
-          desktop-file-install --dir=%{buildroot}%{_datadir}/applications data/se.danielnylander.obd2-viewer.desktop
-          
-          mkdir -p %{buildroot}%{_datadir}/icons/hicolor/scalable/apps
-          cp data/icons/se.danielnylander.obd2-viewer.svg %{buildroot}%{_datadir}/icons/hicolor/scalable/apps/
-          
+          mkdir -p %{buildroot}/usr/share/obd2-viewer/obd2_viewer
+          cp src/obd2_viewer/*.py %{buildroot}/usr/share/obd2-viewer/obd2_viewer/
+          if [ -d src/obd2_viewer/locale ]; then
+            cp -r src/obd2_viewer/locale %{buildroot}/usr/share/obd2-viewer/obd2_viewer/
+          fi
+
+          mkdir -p %{buildroot}/usr/bin
+          cat > %{buildroot}/usr/bin/obd2-viewer << 'LAUNCHER'
+          #!/bin/bash
+          exec python3 -c "import sys; sys.path.insert(0, '/usr/share/obd2-viewer'); from obd2_viewer.main import main; main()" "$@"
+          LAUNCHER
+          chmod 755 %{buildroot}/usr/bin/obd2-viewer
+
+          mkdir -p %{buildroot}/usr/share/applications
+          cp data/*.desktop %{buildroot}/usr/share/applications/ 2>/dev/null || true
+
+          mkdir -p %{buildroot}/usr/share/icons/hicolor/scalable/apps
+          cp data/icons/*.svg %{buildroot}/usr/share/icons/hicolor/scalable/apps/ 2>/dev/null || true
+
           %files
           %license LICENSE
           %doc README.md
-          %{python3_sitelib}/obd2_viewer/
-          %{python3_sitelib}/obd2_viewer-*.egg-info/
-          %{_bindir}/obd2-viewer
-          %{_datadir}/applications/se.danielnylander.obd2-viewer.desktop
-          %{_datadir}/icons/hicolor/scalable/apps/se.danielnylander.obd2-viewer.svg
-          
-          %changelog
+          /usr/bin/obd2-viewer
+          /usr/share/obd2-viewer/
+          /usr/share/applications/*.desktop
+          /usr/share/icons/hicolor/scalable/apps/*.svg
           SPEC
           sed -i "s/VERSION_PLACEHOLDER/$VERSION/g" ~/rpmbuild/SPECS/obd2-viewer.spec
-          echo "          * $(date '+%a %b %d %Y') Daniel Nylander <daniel@danielnylander.se> - $VERSION-1" >> ~/rpmbuild/SPECS/obd2-viewer.spec
-          echo "          - New upstream release" >> ~/rpmbuild/SPECS/obd2-viewer.spec
-          
-          sed -i "s/__version__ = \".*\"/__version__ = \"$VERSION\"/" src/obd2_viewer/__init__.py
-          
-          tar czf ~/rpmbuild/SOURCES/obd2-viewer-$VERSION.tar.gz \
-            --transform "s,^,obd2-viewer-$VERSION/," \
-            --exclude='.git*' --exclude='*.pyc' --exclude='__pycache__' \
-            *
-          
+          sed -i "s|\${repo}|obd2-viewer|g; s|\${PYNAME}|obd2_viewer|g" ~/rpmbuild/SPECS/obd2-viewer.spec
           rpmbuild -ba ~/rpmbuild/SPECS/obd2-viewer.spec
-      
-      - name: Upload RPM artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: rpm-packages
-          path: |
-            ~/rpmbuild/RPMS/noarch/*.rpm
-            ~/rpmbuild/SRPMS/*.rpm
+
+      - name: Upload RPM to release
+        if: github.event_name == 'release'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          VERSION=${{ steps.version.outputs.version }}
+          gh release upload "v$VERSION" \
+            ~/rpmbuild/RPMS/noarch/obd2-viewer-${VERSION}-1.noarch.rpm \
+            --clobber
