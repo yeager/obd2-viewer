@@ -192,13 +192,14 @@ class MainWindow(Adw.ApplicationWindow):
         about.set_application_name(_("OBD2 Viewer"))
         about.set_application_icon("se.danielnylander.obd2-viewer")
         about.set_developer_name("Daniel Nylander")
+        about.set_developers(["Daniel Nylander <daniel@danielnylander.se>"])
         about.set_version(__version__)
         about.set_website("https://github.com/yeager/obd2-viewer")
         about.set_issue_url("https://github.com/yeager/obd2-viewer/issues")
         about.set_copyright("© 2026 Daniel Nylander")
         about.set_license_type(Gtk.License.GPL_3_0)
         about.set_developers(["Daniel Nylander <daniel@danielnylander.se>"])
-        about.set_translator_credits(_("translator-credits"))
+        about.set_translator_credits(_("Translate this app: https://www.transifex.com/danielnylander/obd2-viewer/"))
         about.present(self)
 
     def show_shortcuts(self, action, param):
