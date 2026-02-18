@@ -83,7 +83,7 @@ jobs:
           rpmbuild -ba ~/rpmbuild/SPECS/obd2-viewer.spec
 
       - name: Upload RPM to release
-        if: always()
+        if: github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
