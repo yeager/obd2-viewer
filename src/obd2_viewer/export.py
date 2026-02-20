@@ -10,7 +10,12 @@ gi.require_version('Gtk', '4.0')
 gi.require_version('Adw', '1')
 from gi.repository import Gtk, Adw, Gio, GLib
 
+from obd2_viewer import __version__
+
 _ = gettext.gettext
+
+APP_LABEL = "OBD2 Viewer"
+AUTHOR = "Daniel Nylander"
 
 
 class ExportDialog(Adw.Dialog):
@@ -125,7 +130,8 @@ class ExportDialog(Adw.Dialog):
         """Write export data as JSON."""
         export = {
             "exported_at": datetime.now().isoformat(),
-            "application": "OBD2 Viewer",
+            "application": f"{APP_LABEL} v{__version__}",
+            "author": AUTHOR,
         }
         export.update(data)
         with open(path, "w") as f:
@@ -156,3 +162,4 @@ class ExportDialog(Adw.Dialog):
                         for item in section_data:
                             writer.writerow([item])
                 writer.writerow([])
+            writer.writerow([f"{APP_LABEL} v{__version__} — {AUTHOR}"])
