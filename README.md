@@ -1,60 +1,56 @@
-# ULOBD2 diagnostic data viewer and logger
+# OBD2 Viewer
 
 [![Version](https://img.shields.io/badge/version-0.2.0-blue)](https://github.com/yeager/obd2-viewer/releases)
-
-## Screenshot
-
-![OBD2 Viewer](screenshots/main.png)
-
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL%203.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Transifex](https://img.shields.io/badge/Transifex-translate-green.svg)](https://www.transifex.com/danielnylander/obd2-viewer/)
+[![Transifex](https://img.shields.io/badge/Transifex-Translate-green.svg)](https://www.transifex.com/danielnylander/obd2-viewer/)
 
-OBD2 diagnostic data viewer and logger - a modern GTK4/Libadwaita application.
+OBD-II diagnostic data viewer and logger — GTK4/Adwaita.
+
+![Screenshot](screenshots/main.png)
 
 ## Features
 
-- Modern GTK4/Libadwaita interface
-- Multi-language support via Transifex
-- Keyboard shortcuts support
-- Cross-platform compatibility
+- **Live data** — read OBD-II PIDs in real time
+- **Diagnostic codes** — read and clear DTCs
+- **Data logging** — record sessions to CSV
+- **Gauges** — visual RPM, speed, temperature displays
+- **Vehicle info** — VIN, ECU details
+- **CSV export** — export logs with app branding (Ctrl+E)
+- **Dark/light theme** toggle
 
 ## Installation
 
-### From Source
+### Debian/Ubuntu
+
 ```bash
-git clone https://github.com/yeager/obd2-viewer.git
-cd obd2-viewer
-pip install -e .
+echo "deb [signed-by=/usr/share/keyrings/yeager-keyring.gpg] https://yeager.github.io/debian-repo stable main" | sudo tee /etc/apt/sources.list.d/yeager.list
+curl -fsSL https://yeager.github.io/debian-repo/yeager-keyring.gpg | sudo tee /usr/share/keyrings/yeager-keyring.gpg > /dev/null
+sudo apt update && sudo apt install obd2-viewer
 ```
 
-### Debian/Ubuntu
-Download the latest `.deb` package from the [releases page](https://github.com/yeager/obd2-viewer/releases).
+### Fedora/openSUSE
 
-### Fedora/RHEL
-Download the latest `.rpm` package from the [releases page](https://github.com/yeager/obd2-viewer/releases).
-
-## Usage
-
-Launch the application:
 ```bash
+sudo dnf config-manager --add-repo https://yeager.github.io/rpm-repo/yeager.repo
+sudo dnf install obd2-viewer
+```
+
+### From source
+
+```bash
+git clone https://github.com/yeager/obd2-viewer.git
+cd obd2-viewer && pip install -e .
 obd2-viewer
 ```
 
-### Keyboard Shortcuts
-- `Ctrl+Q` - Quit application
-- `F5` - Refresh data
-- `Ctrl+?` - Show keyboard shortcuts
-
 ## Translation
 
-Help translate this application on [Transifex](https://www.transifex.com/danielnylander/obd2-viewer/).
-
-## Author
-
-**Daniel Nylander**
-- Email: daniel@danielnylander.se
-- GitHub: [@yeager](https://github.com/yeager)
+Help translate on [Transifex](https://www.transifex.com/danielnylander/obd2-viewer/).
 
 ## License
 
-This project is licensed under the GPL-3.0-or-later License - see the [LICENSE](LICENSE) file for details.
+GPL-3.0-or-later — see [LICENSE](LICENSE) for details.
+
+## Author
+
+**Daniel Nylander** — [danielnylander.se](https://danielnylander.se)
