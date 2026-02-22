@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the obd2-viewer package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: obd2-viewer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-22 06:25+0100\n"
+"POT-Creation-Date: 2026-02-22 17:04+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,150 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/obd2_viewer/vehicle_info.py:15
-msgid "VIN"
+#: src/obd2_viewer/connection.py:20
+msgid "Auto"
 msgstr ""
 
-#: src/obd2_viewer/vehicle_info.py:16
-msgid "ECU Name"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:17
-msgid "Calibration ID"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:38
-msgid "Read Vehicle Info"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:58
-msgid "Vehicle Identification"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:67 src/obd2_viewer/vehicle_info.py:140
-msgid "OBD Protocol"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:72
-msgid "Supported PIDs"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:75
-msgid "Connect and read to see supported PIDs"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:83 src/obd2_viewer/dtc.py:83
-#: src/obd2_viewer/dtc.py:90 src/obd2_viewer/dtc.py:155
-#: src/obd2_viewer/freeze_frame.py:88 src/obd2_viewer/logger.py:235
-msgid "Not connected"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:85
-msgid "Reading vehicle info…"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:92 src/obd2_viewer/dtc.py:111
-#: src/obd2_viewer/dtc.py:186 src/obd2_viewer/freeze_frame.py:97
-msgid "python-obd is not installed"
-msgstr ""
-
-#: src/obd2_viewer/vehicle_info.py:125
+#: src/obd2_viewer/connection.py:107
 #, python-format
-msgid "%d supported PIDs"
+msgid "Connecting to %s…"
 msgstr ""
 
-#: src/obd2_viewer/vehicle_info.py:127
-msgid "Vehicle info read"
+#: src/obd2_viewer/connection.py:119
+#, python-format
+msgid "Connected to %s"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:121
+#, python-format
+msgid "Failed to connect to %s"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:122
+msgid "Connection failed"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:125
+msgid "python-obd is not installed. Install it with: pip install obd"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:126
+msgid "Missing python-obd"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:129
+msgid "Connection error"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:141 src/obd2_viewer/main.py:80
+#: src/obd2_viewer/main.py:194
+msgid "Disconnected"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:166 src/obd2_viewer/main.py:74
+#: src/obd2_viewer/main.py:197
+msgid "Connect to Vehicle"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:182
+msgid "Saved Profiles"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:192
+msgid "Connection Settings"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:196
+msgid "Serial Port"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:200
+msgid "No ports detected"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:207
+msgid "Custom Port Path"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:211
+msgid "Baud Rate"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:224
+msgid "Save Profile"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:228
+msgid "Connect"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:278
+msgid "Unknown"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:279
+#, python-format
+msgid "Baud: %s"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:281
+msgid "Use"
+msgstr ""
+
+#: src/obd2_viewer/connection.py:293
+msgid "No saved profiles"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:17
+msgid "RPM"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:17
+msgid "rpm"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:18
+msgid "Speed"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:18
+msgid "km/h"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:19
+msgid "Coolant Temp"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:20
+msgid "Intake Temp"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:21
+msgid "Throttle"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:22
+msgid "Engine Load"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:23
+msgid "Boost"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:23
+msgid "kPa"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:24
+msgid "Fuel Status"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:47
+msgid "Refresh rate:"
+msgstr ""
+
+#: src/obd2_viewer/dashboard.py:55
+msgid "Hz"
 msgstr ""
 
 #: src/obd2_viewer/dtc.py:32
@@ -93,12 +183,23 @@ msgstr ""
 msgid "Connect to a vehicle and read DTCs"
 msgstr ""
 
+#: src/obd2_viewer/dtc.py:83 src/obd2_viewer/dtc.py:90
+#: src/obd2_viewer/dtc.py:155 src/obd2_viewer/freeze_frame.py:88
+#: src/obd2_viewer/logger.py:235 src/obd2_viewer/vehicle_info.py:83
+msgid "Not connected"
+msgstr ""
+
 #: src/obd2_viewer/dtc.py:85
 msgid "Reading stored DTCs…"
 msgstr ""
 
 #: src/obd2_viewer/dtc.py:92
 msgid "Reading pending DTCs…"
+msgstr ""
+
+#: src/obd2_viewer/dtc.py:111 src/obd2_viewer/dtc.py:186
+#: src/obd2_viewer/freeze_frame.py:97 src/obd2_viewer/vehicle_info.py:92
+msgid "python-obd is not installed"
 msgstr ""
 
 #: src/obd2_viewer/dtc.py:120 src/obd2_viewer/dtc.py:124
@@ -136,35 +237,6 @@ msgstr ""
 msgid "DTCs cleared successfully"
 msgstr ""
 
-#: src/obd2_viewer/freeze_frame.py:47
-msgid "Read Freeze Frame"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:73 src/obd2_viewer/freeze_frame.py:137
-msgid "No freeze frame data"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:74
-msgid "Connect to a vehicle and read freeze frame data from stored DTCs"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:90
-msgid "Reading freeze frame data…"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:132
-msgid "No freeze frame data available"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:133
-msgid "No DTCs with freeze frame data stored"
-msgstr ""
-
-#: src/obd2_viewer/freeze_frame.py:140
-#, python-format
-msgid "%d parameters read"
-msgstr ""
-
 #: src/obd2_viewer/export.py:26
 msgid "Export Data"
 msgstr ""
@@ -196,6 +268,35 @@ msgstr ""
 #: src/obd2_viewer/export.py:144
 #, python-format
 msgid "Export from OBD2 Viewer — %s"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:47
+msgid "Read Freeze Frame"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:73 src/obd2_viewer/freeze_frame.py:137
+msgid "No freeze frame data"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:74
+msgid "Connect to a vehicle and read freeze frame data from stored DTCs"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:90
+msgid "Reading freeze frame data…"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:132
+msgid "No freeze frame data available"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:133
+msgid "No DTCs with freeze frame data stored"
+msgstr ""
+
+#: src/obd2_viewer/freeze_frame.py:140
+#, python-format
+msgid "%d parameters read"
 msgstr ""
 
 #: src/obd2_viewer/logger.py:66
@@ -257,223 +358,77 @@ msgstr ""
 msgid "Log cleared"
 msgstr ""
 
-#: src/obd2_viewer/dashboard.py:17
-msgid "RPM"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:17
-msgid "rpm"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:18
-msgid "Speed"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:18
-msgid "km/h"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:19
-msgid "Coolant Temp"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:20
-msgid "Intake Temp"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:21
-msgid "Throttle"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:22
-msgid "Engine Load"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:23
-msgid "Boost"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:23
-msgid "kPa"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:24
-msgid "Fuel Status"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:47
-msgid "Refresh rate:"
-msgstr ""
-
-#: src/obd2_viewer/dashboard.py:55
-msgid "Hz"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:20
-msgid "Auto"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:107
-#, python-format
-msgid "Connecting to %s…"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:119
-#, python-format
-msgid "Connected to %s"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:121
-#, python-format
-msgid "Failed to connect to %s"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:122
-msgid "Connection failed"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:125
-msgid "python-obd is not installed. Install it with: pip install obd"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:126
-msgid "Missing python-obd"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:129
-msgid "Connection error"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:141 src/obd2_viewer/main.py:79
-#: src/obd2_viewer/main.py:193
-msgid "Disconnected"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:166 src/obd2_viewer/main.py:73
-#: src/obd2_viewer/main.py:196
-msgid "Connect to Vehicle"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:182
-msgid "Saved Profiles"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:192
-msgid "Connection Settings"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:196
-msgid "Serial Port"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:200
-msgid "No ports detected"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:207
-msgid "Custom Port Path"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:211
-msgid "Baud Rate"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:224
-msgid "Save Profile"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:228
-msgid "Connect"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:278
-msgid "Unknown"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:279
-#, python-format
-msgid "Baud: %s"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:281
-msgid "Use"
-msgstr ""
-
-#: src/obd2_viewer/connection.py:293
-msgid "No saved profiles"
-msgstr ""
-
-#: src/obd2_viewer/main.py:55 src/obd2_viewer/main.py:213
+#: src/obd2_viewer/main.py:56 src/obd2_viewer/main.py:214
 msgid "OBD2 Viewer"
 msgstr ""
 
-#: src/obd2_viewer/main.py:83 src/obd2_viewer/main.py:197
+#: src/obd2_viewer/main.py:84 src/obd2_viewer/main.py:198
 msgid "No vehicle connected"
 msgstr ""
 
-#: src/obd2_viewer/main.py:98
+#: src/obd2_viewer/main.py:99
 msgid "Keyboard Shortcuts"
 msgstr ""
 
-#: src/obd2_viewer/main.py:99
+#: src/obd2_viewer/main.py:100
 msgid "About OBD2 Viewer"
 msgstr ""
 
-#: src/obd2_viewer/main.py:118 src/obd2_viewer/main.py:280
+#: src/obd2_viewer/main.py:119 src/obd2_viewer/main.py:281
 msgid "Dashboard"
 msgstr ""
 
-#: src/obd2_viewer/main.py:123 src/obd2_viewer/main.py:281
+#: src/obd2_viewer/main.py:124 src/obd2_viewer/main.py:282
 msgid "DTCs"
 msgstr ""
 
-#: src/obd2_viewer/main.py:128 src/obd2_viewer/main.py:282
+#: src/obd2_viewer/main.py:129 src/obd2_viewer/main.py:283
 msgid "Logger"
 msgstr ""
 
-#: src/obd2_viewer/main.py:133 src/obd2_viewer/main.py:283
+#: src/obd2_viewer/main.py:134 src/obd2_viewer/main.py:284
 msgid "Vehicle Info"
 msgstr ""
 
-#: src/obd2_viewer/main.py:138 src/obd2_viewer/main.py:284
+#: src/obd2_viewer/main.py:139 src/obd2_viewer/main.py:285
 msgid "Freeze Frame"
 msgstr ""
 
-#: src/obd2_viewer/main.py:150 src/obd2_viewer/main.py:296
+#: src/obd2_viewer/main.py:151 src/obd2_viewer/main.py:297
 msgid "Ready"
 msgstr ""
 
-#: src/obd2_viewer/main.py:181
+#: src/obd2_viewer/main.py:182
 msgid "Connected"
 msgstr ""
 
-#: src/obd2_viewer/main.py:185
+#: src/obd2_viewer/main.py:186
 msgid "Disconnect"
 msgstr ""
 
-#: src/obd2_viewer/main.py:201
+#: src/obd2_viewer/main.py:202
 #, python-format
 msgid "Error: %s"
 msgstr ""
 
-#: src/obd2_viewer/main.py:223
+#: src/obd2_viewer/main.py:224
 msgid ""
 "Translate this app: https://www.transifex.com/danielnylander/obd2-viewer/"
 msgstr ""
 
-#: src/obd2_viewer/main.py:290
+#: src/obd2_viewer/main.py:291
 msgid "Refreshing…"
 msgstr ""
 
-#: src/obd2_viewer/main.py:365
+#: src/obd2_viewer/main.py:366
 msgid "Welcome"
 msgstr ""
 
-#: src/obd2_viewer/main.py:370
+#: src/obd2_viewer/main.py:371
 msgid "Welcome to OBD2 Viewer"
 msgstr ""
 
-#: src/obd2_viewer/main.py:371
+#: src/obd2_viewer/main.py:372
 msgid ""
 "Read vehicle diagnostics via OBD-II.\n"
 "\n"
@@ -482,6 +437,51 @@ msgid ""
 "✓ Export reports"
 msgstr ""
 
-#: src/obd2_viewer/main.py:372
+#: src/obd2_viewer/main.py:373
 msgid "Get Started"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:15
+msgid "VIN"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:16
+msgid "ECU Name"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:17
+msgid "Calibration ID"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:38
+msgid "Read Vehicle Info"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:58
+msgid "Vehicle Identification"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:67 src/obd2_viewer/vehicle_info.py:140
+msgid "OBD Protocol"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:72
+msgid "Supported PIDs"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:75
+msgid "Connect and read to see supported PIDs"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:85
+msgid "Reading vehicle info…"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:125
+#, python-format
+msgid "%d supported PIDs"
+msgstr ""
+
+#: src/obd2_viewer/vehicle_info.py:127
+msgid "Vehicle info read"
 msgstr ""
