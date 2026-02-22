@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: obd2-viewer\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-22 12:23+0100\n"
+"POT-Creation-Date: 2026-02-22 17:04+0100\n"
 "PO-Revision-Date: 2026-02-16 16:18+0000\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>, 2026\n"
 "Language-Team: Swedish (https://app.transifex.com/danielnylander/teams/304856/sv/)\n"
@@ -21,61 +21,151 @@ msgstr ""
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/obd2_viewer/vehicle_info.py:15
-msgid "VIN"
-msgstr "VIN"
+#: src/obd2_viewer/connection.py:20
+msgid "Auto"
+msgstr "Auto"
 
-#: src/obd2_viewer/vehicle_info.py:16
-msgid "ECU Name"
-msgstr "ECU-namn"
-
-#: src/obd2_viewer/vehicle_info.py:17
-msgid "Calibration ID"
-msgstr "Kalibrerings-id"
-
-#: src/obd2_viewer/vehicle_info.py:38
-msgid "Read Vehicle Info"
-msgstr "Läs fordonsinformation"
-
-#: src/obd2_viewer/vehicle_info.py:58
-msgid "Vehicle Identification"
-msgstr "Fordonsidentifiering"
-
-#: src/obd2_viewer/vehicle_info.py:67 src/obd2_viewer/vehicle_info.py:140
-msgid "OBD Protocol"
-msgstr "OBD-protokoll"
-
-#: src/obd2_viewer/vehicle_info.py:72
-msgid "Supported PIDs"
-msgstr "PID-koder som stöds"
-
-#: src/obd2_viewer/vehicle_info.py:75
-msgid "Connect and read to see supported PIDs"
-msgstr "Anslut och läs för att se vilka PID-koder som stöds"
-
-#: src/obd2_viewer/vehicle_info.py:83 src/obd2_viewer/dtc.py:83
-#: src/obd2_viewer/dtc.py:90 src/obd2_viewer/dtc.py:155
-#: src/obd2_viewer/freeze_frame.py:88 src/obd2_viewer/logger.py:235
-msgid "Not connected"
-msgstr "Inte ansluten"
-
-#: src/obd2_viewer/vehicle_info.py:85
-msgid "Reading vehicle info…"
-msgstr "Läser fordonsinfo…"
-
-#: src/obd2_viewer/vehicle_info.py:92 src/obd2_viewer/dtc.py:111
-#: src/obd2_viewer/dtc.py:186 src/obd2_viewer/freeze_frame.py:97
-msgid "python-obd is not installed"
-msgstr "python-obd är inte installerat"
-
-#: src/obd2_viewer/vehicle_info.py:125
+#: src/obd2_viewer/connection.py:107
 #, python-format
-msgid "%d supported PIDs"
-msgstr "%d PID-koder stöds"
+msgid "Connecting to %s…"
+msgstr "Ansluter till %s…"
 
-#: src/obd2_viewer/vehicle_info.py:127
-msgid "Vehicle info read"
-msgstr "Fordonsinformation läst"
+#: src/obd2_viewer/connection.py:119
+#, python-format
+msgid "Connected to %s"
+msgstr "Ansluten till %s"
+
+#: src/obd2_viewer/connection.py:121
+#, python-format
+msgid "Failed to connect to %s"
+msgstr "Misslyckades med att ansluta till %s"
+
+#: src/obd2_viewer/connection.py:122
+msgid "Connection failed"
+msgstr "Anslutning misslyckades"
+
+#: src/obd2_viewer/connection.py:125
+msgid "python-obd is not installed. Install it with: pip install obd"
+msgstr "python-obd är inte installerat. Installera det med: pip install obd"
+
+#: src/obd2_viewer/connection.py:126
+msgid "Missing python-obd"
+msgstr "Saknar python-obd"
+
+#: src/obd2_viewer/connection.py:129
+msgid "Connection error"
+msgstr "Anslutningsfel"
+
+#: src/obd2_viewer/connection.py:141 src/obd2_viewer/main.py:80
+#: src/obd2_viewer/main.py:194
+msgid "Disconnected"
+msgstr "Frånkopplad"
+
+#: src/obd2_viewer/connection.py:166 src/obd2_viewer/main.py:74
+#: src/obd2_viewer/main.py:197
+msgid "Connect to Vehicle"
+msgstr "Anslut till fordon"
+
+#: src/obd2_viewer/connection.py:182
+msgid "Saved Profiles"
+msgstr "Sparade profiler"
+
+#: src/obd2_viewer/connection.py:192
+msgid "Connection Settings"
+msgstr "Anslutningsinställningar"
+
+#: src/obd2_viewer/connection.py:196
+msgid "Serial Port"
+msgstr "Serieport"
+
+#: src/obd2_viewer/connection.py:200
+msgid "No ports detected"
+msgstr "Inga portar upptäcktes"
+
+#: src/obd2_viewer/connection.py:207
+msgid "Custom Port Path"
+msgstr "Anpassad portsökväg"
+
+#: src/obd2_viewer/connection.py:211
+msgid "Baud Rate"
+msgstr "Baudhastighet"
+
+#: src/obd2_viewer/connection.py:224
+msgid "Save Profile"
+msgstr "Spara profil"
+
+#: src/obd2_viewer/connection.py:228
+msgid "Connect"
+msgstr "Anslut"
+
+#: src/obd2_viewer/connection.py:278
+msgid "Unknown"
+msgstr "Okänt"
+
+#: src/obd2_viewer/connection.py:279
+#, python-format
+msgid "Baud: %s"
+msgstr "Baud: %s"
+
+#: src/obd2_viewer/connection.py:281
+msgid "Use"
+msgstr "Använd"
+
+#: src/obd2_viewer/connection.py:293
+msgid "No saved profiles"
+msgstr "Inga sparade profiler"
+
+#: src/obd2_viewer/dashboard.py:17
+msgid "RPM"
+msgstr "RPM"
+
+#: src/obd2_viewer/dashboard.py:17
+msgid "rpm"
+msgstr "rpm"
+
+#: src/obd2_viewer/dashboard.py:18
+msgid "Speed"
+msgstr "Hastighet"
+
+#: src/obd2_viewer/dashboard.py:18
+msgid "km/h"
+msgstr "km/h"
+
+#: src/obd2_viewer/dashboard.py:19
+msgid "Coolant Temp"
+msgstr "Kylvätsketemperatur"
+
+#: src/obd2_viewer/dashboard.py:20
+msgid "Intake Temp"
+msgstr "Intagstemperatur"
+
+#: src/obd2_viewer/dashboard.py:21
+msgid "Throttle"
+msgstr "Gas"
+
+#: src/obd2_viewer/dashboard.py:22
+msgid "Engine Load"
+msgstr "Motorbelastning"
+
+#: src/obd2_viewer/dashboard.py:23
+msgid "Boost"
+msgstr "Boost"
+
+#: src/obd2_viewer/dashboard.py:23
+msgid "kPa"
+msgstr "kPa"
+
+#: src/obd2_viewer/dashboard.py:24
+msgid "Fuel Status"
+msgstr "Bränslestatus"
+
+#: src/obd2_viewer/dashboard.py:47
+msgid "Refresh rate:"
+msgstr "Uppdateringsfrekvens:"
+
+#: src/obd2_viewer/dashboard.py:55
+msgid "Hz"
+msgstr "Hz"
 
 #: src/obd2_viewer/dtc.py:32
 msgid "Read Stored DTCs"
@@ -97,6 +187,12 @@ msgstr "Inga DTC-koder inlästa"
 msgid "Connect to a vehicle and read DTCs"
 msgstr "Anslut till ett fordon och läs av DTC-koder"
 
+#: src/obd2_viewer/dtc.py:83 src/obd2_viewer/dtc.py:90
+#: src/obd2_viewer/dtc.py:155 src/obd2_viewer/freeze_frame.py:88
+#: src/obd2_viewer/logger.py:235 src/obd2_viewer/vehicle_info.py:83
+msgid "Not connected"
+msgstr "Inte ansluten"
+
 #: src/obd2_viewer/dtc.py:85
 msgid "Reading stored DTCs…"
 msgstr "Läser lagrade DTC-koder..."
@@ -104,6 +200,11 @@ msgstr "Läser lagrade DTC-koder..."
 #: src/obd2_viewer/dtc.py:92
 msgid "Reading pending DTCs…"
 msgstr "Läser väntande DTC-koder..."
+
+#: src/obd2_viewer/dtc.py:111 src/obd2_viewer/dtc.py:186
+#: src/obd2_viewer/freeze_frame.py:97 src/obd2_viewer/vehicle_info.py:92
+msgid "python-obd is not installed"
+msgstr "python-obd är inte installerat"
 
 #: src/obd2_viewer/dtc.py:120 src/obd2_viewer/dtc.py:124
 msgid "No DTCs found"
@@ -142,35 +243,6 @@ msgstr "Rensar DTC-koder…"
 msgid "DTCs cleared successfully"
 msgstr "DTC-koder rensades"
 
-#: src/obd2_viewer/freeze_frame.py:47
-msgid "Read Freeze Frame"
-msgstr "Läs frysbild"
-
-#: src/obd2_viewer/freeze_frame.py:73 src/obd2_viewer/freeze_frame.py:137
-msgid "No freeze frame data"
-msgstr "Inga frysbildsdata"
-
-#: src/obd2_viewer/freeze_frame.py:74
-msgid "Connect to a vehicle and read freeze frame data from stored DTCs"
-msgstr "Anslut till ett fordon och läs frysbildsdata från lagrade DTC-koder"
-
-#: src/obd2_viewer/freeze_frame.py:90
-msgid "Reading freeze frame data…"
-msgstr "Läser frysbildsdata..."
-
-#: src/obd2_viewer/freeze_frame.py:132
-msgid "No freeze frame data available"
-msgstr "Inga frysbildsdata tillgängliga"
-
-#: src/obd2_viewer/freeze_frame.py:133
-msgid "No DTCs with freeze frame data stored"
-msgstr "Inga DTC-koder med frysbildsdata lagrade"
-
-#: src/obd2_viewer/freeze_frame.py:140
-#, python-format
-msgid "%d parameters read"
-msgstr "%d parametrar lästa"
-
 #: src/obd2_viewer/export.py:26
 msgid "Export Data"
 msgstr "Exportera data"
@@ -203,6 +275,35 @@ msgstr "Filer"
 #, python-format
 msgid "Export from OBD2 Viewer — %s"
 msgstr "Exportera från OBD2-visare — %s"
+
+#: src/obd2_viewer/freeze_frame.py:47
+msgid "Read Freeze Frame"
+msgstr "Läs frysbild"
+
+#: src/obd2_viewer/freeze_frame.py:73 src/obd2_viewer/freeze_frame.py:137
+msgid "No freeze frame data"
+msgstr "Inga frysbildsdata"
+
+#: src/obd2_viewer/freeze_frame.py:74
+msgid "Connect to a vehicle and read freeze frame data from stored DTCs"
+msgstr "Anslut till ett fordon och läs frysbildsdata från lagrade DTC-koder"
+
+#: src/obd2_viewer/freeze_frame.py:90
+msgid "Reading freeze frame data…"
+msgstr "Läser frysbildsdata..."
+
+#: src/obd2_viewer/freeze_frame.py:132
+msgid "No freeze frame data available"
+msgstr "Inga frysbildsdata tillgängliga"
+
+#: src/obd2_viewer/freeze_frame.py:133
+msgid "No DTCs with freeze frame data stored"
+msgstr "Inga DTC-koder med frysbildsdata lagrade"
+
+#: src/obd2_viewer/freeze_frame.py:140
+#, python-format
+msgid "%d parameters read"
+msgstr "%d parametrar lästa"
 
 #: src/obd2_viewer/logger.py:66
 msgid "No data recorded"
@@ -263,224 +364,78 @@ msgstr "Tid (s)"
 msgid "Log cleared"
 msgstr "Logg tömd"
 
-#: src/obd2_viewer/dashboard.py:17
-msgid "RPM"
-msgstr "RPM"
-
-#: src/obd2_viewer/dashboard.py:17
-msgid "rpm"
-msgstr "rpm"
-
-#: src/obd2_viewer/dashboard.py:18
-msgid "Speed"
-msgstr "Hastighet"
-
-#: src/obd2_viewer/dashboard.py:18
-msgid "km/h"
-msgstr "km/h"
-
-#: src/obd2_viewer/dashboard.py:19
-msgid "Coolant Temp"
-msgstr "Kylvätsketemperatur"
-
-#: src/obd2_viewer/dashboard.py:20
-msgid "Intake Temp"
-msgstr "Intagstemperatur"
-
-#: src/obd2_viewer/dashboard.py:21
-msgid "Throttle"
-msgstr "Gas"
-
-#: src/obd2_viewer/dashboard.py:22
-msgid "Engine Load"
-msgstr "Motorbelastning"
-
-#: src/obd2_viewer/dashboard.py:23
-msgid "Boost"
-msgstr "Boost"
-
-#: src/obd2_viewer/dashboard.py:23
-msgid "kPa"
-msgstr "kPa"
-
-#: src/obd2_viewer/dashboard.py:24
-msgid "Fuel Status"
-msgstr "Bränslestatus"
-
-#: src/obd2_viewer/dashboard.py:47
-msgid "Refresh rate:"
-msgstr "Uppdateringsfrekvens:"
-
-#: src/obd2_viewer/dashboard.py:55
-msgid "Hz"
-msgstr "Hz"
-
-#: src/obd2_viewer/connection.py:20
-msgid "Auto"
-msgstr "Auto"
-
-#: src/obd2_viewer/connection.py:107
-#, python-format
-msgid "Connecting to %s…"
-msgstr "Ansluter till %s…"
-
-#: src/obd2_viewer/connection.py:119
-#, python-format
-msgid "Connected to %s"
-msgstr "Ansluten till %s"
-
-#: src/obd2_viewer/connection.py:121
-#, python-format
-msgid "Failed to connect to %s"
-msgstr "Misslyckades med att ansluta till %s"
-
-#: src/obd2_viewer/connection.py:122
-msgid "Connection failed"
-msgstr "Anslutning misslyckades"
-
-#: src/obd2_viewer/connection.py:125
-msgid "python-obd is not installed. Install it with: pip install obd"
-msgstr "python-obd är inte installerat. Installera det med: pip install obd"
-
-#: src/obd2_viewer/connection.py:126
-msgid "Missing python-obd"
-msgstr "Saknar python-obd"
-
-#: src/obd2_viewer/connection.py:129
-msgid "Connection error"
-msgstr "Anslutningsfel"
-
-#: src/obd2_viewer/connection.py:141 src/obd2_viewer/main.py:79
-#: src/obd2_viewer/main.py:193
-msgid "Disconnected"
-msgstr "Frånkopplad"
-
-#: src/obd2_viewer/connection.py:166 src/obd2_viewer/main.py:73
-#: src/obd2_viewer/main.py:196
-msgid "Connect to Vehicle"
-msgstr "Anslut till fordon"
-
-#: src/obd2_viewer/connection.py:182
-msgid "Saved Profiles"
-msgstr "Sparade profiler"
-
-#: src/obd2_viewer/connection.py:192
-msgid "Connection Settings"
-msgstr "Anslutningsinställningar"
-
-#: src/obd2_viewer/connection.py:196
-msgid "Serial Port"
-msgstr "Serieport"
-
-#: src/obd2_viewer/connection.py:200
-msgid "No ports detected"
-msgstr "Inga portar upptäcktes"
-
-#: src/obd2_viewer/connection.py:207
-msgid "Custom Port Path"
-msgstr "Anpassad portsökväg"
-
-#: src/obd2_viewer/connection.py:211
-msgid "Baud Rate"
-msgstr "Baudhastighet"
-
-#: src/obd2_viewer/connection.py:224
-msgid "Save Profile"
-msgstr "Spara profil"
-
-#: src/obd2_viewer/connection.py:228
-msgid "Connect"
-msgstr "Anslut"
-
-#: src/obd2_viewer/connection.py:278
-msgid "Unknown"
-msgstr "Okänt"
-
-#: src/obd2_viewer/connection.py:279
-#, python-format
-msgid "Baud: %s"
-msgstr "Baud: %s"
-
-#: src/obd2_viewer/connection.py:281
-msgid "Use"
-msgstr "Använd"
-
-#: src/obd2_viewer/connection.py:293
-msgid "No saved profiles"
-msgstr "Inga sparade profiler"
-
-#: src/obd2_viewer/main.py:55 src/obd2_viewer/main.py:213
+#: src/obd2_viewer/main.py:56 src/obd2_viewer/main.py:214
 msgid "OBD2 Viewer"
 msgstr "OBD2-visare"
 
-#: src/obd2_viewer/main.py:83 src/obd2_viewer/main.py:197
+#: src/obd2_viewer/main.py:84 src/obd2_viewer/main.py:198
 msgid "No vehicle connected"
 msgstr "Inget fordon anslutet"
 
-#: src/obd2_viewer/main.py:98
+#: src/obd2_viewer/main.py:99
 msgid "Keyboard Shortcuts"
 msgstr "Tangentbordsgenvägar"
 
-#: src/obd2_viewer/main.py:99
+#: src/obd2_viewer/main.py:100
 msgid "About OBD2 Viewer"
 msgstr "Om OBD2-visare"
 
-#: src/obd2_viewer/main.py:118 src/obd2_viewer/main.py:280
+#: src/obd2_viewer/main.py:119 src/obd2_viewer/main.py:281
 msgid "Dashboard"
 msgstr "Kontrollpanel"
 
-#: src/obd2_viewer/main.py:123 src/obd2_viewer/main.py:281
+#: src/obd2_viewer/main.py:124 src/obd2_viewer/main.py:282
 msgid "DTCs"
 msgstr "DTC-koder"
 
-#: src/obd2_viewer/main.py:128 src/obd2_viewer/main.py:282
+#: src/obd2_viewer/main.py:129 src/obd2_viewer/main.py:283
 msgid "Logger"
 msgstr "Loggare"
 
-#: src/obd2_viewer/main.py:133 src/obd2_viewer/main.py:283
+#: src/obd2_viewer/main.py:134 src/obd2_viewer/main.py:284
 msgid "Vehicle Info"
 msgstr "Fordonsinformation"
 
-#: src/obd2_viewer/main.py:138 src/obd2_viewer/main.py:284
+#: src/obd2_viewer/main.py:139 src/obd2_viewer/main.py:285
 msgid "Freeze Frame"
 msgstr "Frysbild"
 
-#: src/obd2_viewer/main.py:150 src/obd2_viewer/main.py:296
+#: src/obd2_viewer/main.py:151 src/obd2_viewer/main.py:297
 msgid "Ready"
 msgstr "Redo"
 
-#: src/obd2_viewer/main.py:181
+#: src/obd2_viewer/main.py:182
 msgid "Connected"
 msgstr "Ansluten"
 
-#: src/obd2_viewer/main.py:185
+#: src/obd2_viewer/main.py:186
 msgid "Disconnect"
 msgstr "Koppla från"
 
-#: src/obd2_viewer/main.py:201
+#: src/obd2_viewer/main.py:202
 #, python-format
 msgid "Error: %s"
 msgstr "Fel: %s"
 
-#: src/obd2_viewer/main.py:223
+#: src/obd2_viewer/main.py:224
 msgid ""
 "Translate this app: https://www.transifex.com/danielnylander/obd2-viewer/"
 msgstr ""
 "Översätt denna app: https://www.transifex.com/danielnylander/obd2-viewer/"
 
-#: src/obd2_viewer/main.py:290
+#: src/obd2_viewer/main.py:291
 msgid "Refreshing…"
 msgstr "Uppdaterar…"
 
-#: src/obd2_viewer/main.py:365
+#: src/obd2_viewer/main.py:366
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: src/obd2_viewer/main.py:370
+#: src/obd2_viewer/main.py:371
 msgid "Welcome to OBD2 Viewer"
 msgstr "Välkommen till OBD2-visare"
 
-#: src/obd2_viewer/main.py:371
+#: src/obd2_viewer/main.py:372
 msgid ""
 "Read vehicle diagnostics via OBD-II.\n"
 "\n"
@@ -494,6 +449,51 @@ msgstr ""
 "✓ Sensordata i realtid\n"
 "✓ Exportera rapporter"
 
-#: src/obd2_viewer/main.py:372
+#: src/obd2_viewer/main.py:373
 msgid "Get Started"
 msgstr "Kom igång"
+
+#: src/obd2_viewer/vehicle_info.py:15
+msgid "VIN"
+msgstr "VIN"
+
+#: src/obd2_viewer/vehicle_info.py:16
+msgid "ECU Name"
+msgstr "ECU-namn"
+
+#: src/obd2_viewer/vehicle_info.py:17
+msgid "Calibration ID"
+msgstr "Kalibrerings-id"
+
+#: src/obd2_viewer/vehicle_info.py:38
+msgid "Read Vehicle Info"
+msgstr "Läs fordonsinformation"
+
+#: src/obd2_viewer/vehicle_info.py:58
+msgid "Vehicle Identification"
+msgstr "Fordonsidentifiering"
+
+#: src/obd2_viewer/vehicle_info.py:67 src/obd2_viewer/vehicle_info.py:140
+msgid "OBD Protocol"
+msgstr "OBD-protokoll"
+
+#: src/obd2_viewer/vehicle_info.py:72
+msgid "Supported PIDs"
+msgstr "PID-koder som stöds"
+
+#: src/obd2_viewer/vehicle_info.py:75
+msgid "Connect and read to see supported PIDs"
+msgstr "Anslut och läs för att se vilka PID-koder som stöds"
+
+#: src/obd2_viewer/vehicle_info.py:85
+msgid "Reading vehicle info…"
+msgstr "Läser fordonsinfo…"
+
+#: src/obd2_viewer/vehicle_info.py:125
+#, python-format
+msgid "%d supported PIDs"
+msgstr "%d PID-koder stöds"
+
+#: src/obd2_viewer/vehicle_info.py:127
+msgid "Vehicle info read"
+msgstr "Fordonsinformation läst"
